@@ -14,6 +14,7 @@ public class lab4q3 {
             System.out.println("Matrix is not symmetric as it isnt square");
         else//transpose checking if square matrix
         {
+            System.out.println("Enter elements:");
             for (i=0;i<n;i++)//initialising matrix
             {
                 for (j=0;j<n;j++)
