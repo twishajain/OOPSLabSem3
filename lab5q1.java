@@ -3,12 +3,12 @@ class box{
     double w;
     double h;
     double d;
-    box(){
+    box(){//default constructor
         w=1;
         h=1;
         d=1;
     }
-    box(double a,double b,double c)
+    box(double a,double b,double c)//parameterized constructor
     {
         w=a;
         h=b;
@@ -16,7 +16,7 @@ class box{
     }
     double volume()
     {
-        return (w*h*d);
+        return (w*h*d);//calculating volume
     }
 }
 class lab5q1 {
