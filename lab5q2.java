@@ -6,7 +6,7 @@ class employe{
     double da;
     double hra;
     void getdata()
-    {
+    {//taking inputs
         System.out.println("Enter emp name:");
         Scanner s1=new Scanner (System.in);
         name=s1.next();
@@ -22,11 +22,11 @@ class employe{
     }
     double calculate()
     {
-        return (sal+(sal*(da/100))+(sal*(hra/100)));
+        return (sal+(sal*(da/100))+(sal*(hra/100)));//calculating and returning final salary
     }
     void disp(double total)
     {
-        System.out.println("total:"+  total);
+        System.out.println("total:"+  total);//printing salary
     }
 }
 public class lab5q2 {
