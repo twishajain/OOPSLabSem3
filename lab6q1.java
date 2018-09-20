@@ -35,13 +35,13 @@ class Savings extends Account{
     double cent;
     Savings()
     {
-        super();
+        super();        //calling constructor of super class
         type='s';
         cent=0.01;
     }
     Savings(double x,String a,int b)
     {
-        super(a,b,'s');
+        super(a,b,'s');     //calling parameterized constructor of super class
         cent=x;
     }
     void interest()
@@ -85,11 +85,11 @@ class Current extends Account{
 public class lab6q1 {
     public static void main(String args[]){
     Account hb=new Account();
-    hb.deposit(1000);
+    hb.deposit(1000);           //calling super class method for superclass obj
     Savings s=new Savings(0.1,"Twisha",12);
     s.deposit(2000);
-    s.interest();
-    s.disp();
+    s.interest();       //calling subclass method
+    s.disp();       //calling superclass method for subclass obj
     s.withdraw(500);
     s.disp();
     Current c=new Current("ABC",13);
