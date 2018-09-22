@@ -53,7 +53,7 @@ class Number
         for (int i=2;i<x/2;i++)
         {
             if (x%i==0)
-                flag=1;
+                flag=1;         //checking divisibility with any no
         }
         if (flag==0)
             return true;
