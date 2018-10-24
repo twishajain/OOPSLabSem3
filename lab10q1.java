@@ -78,7 +78,7 @@ class Menu
 	}
 }
 
-class One
+class lab10q1
 {
 	public static void main(String[] args) 
 	{
