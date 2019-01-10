@@ -4,21 +4,16 @@
  * and open the template in the editor.
  */
 package twishasbank;
-
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author student
  */
-public class login extends javax.swing.JFrame {
+public class ViewBalance extends javax.swing.JFrame {
 
     /**
-     * Creates new form login
+     * Creates new form ViewBalance
      */
-    public static long bal;
-    public login() {
-        bal=10000;
+    public ViewBalance() {
         initComponents();
     }
 
@@ -32,11 +27,8 @@ public class login extends javax.swing.JFrame {
     private void initComponents() {
 
         jFrame1 = new javax.swing.JFrame();
-        jLabelUserId = new javax.swing.JLabel();
-        jLabelpassword = new javax.swing.JLabel();
-        username = new javax.swing.JTextField();
-        jButtonLogin = new javax.swing.JButton();
-        password = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -54,49 +46,24 @@ public class login extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(400, 400));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelUserId.setText("User ID");
-        getContentPane().add(jLabelUserId, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 70, -1));
+        jLabel1.setText("Account Balance");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 48, -1, 88));
 
-        jLabelpassword.setText("Password");
-        getContentPane().add(jLabelpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 80, 20));
-
-        username.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("View");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 100, -1));
-
-        jButtonLogin.setText("Login");
-        jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonLoginActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, -1, -1));
-        getContentPane().add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 100, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_usernameActionPerformed
-
-    private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
-        // TODO add your handling code here:
-        String user=username.getText();
-        String pass=password.getText();
-        if (user.equals("name") && pass.equals("password"))
-        {
-            JOptionPane.showMessageDialog(jFrame1,"You are successfully logined.");
-            jFrame1.dispose();
-            acctbalance a=new acctbalance();
-            a.setVisible(true);
-        }
-        else
-            JOptionPane.showMessageDialog(jFrame1, "Invalid username or password");
-    }//GEN-LAST:event_jButtonLoginActionPerformed
+        jButton1.setText(login.bal+"");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -115,30 +82,27 @@ public class login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewBalance.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewBalance.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewBalance.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewBalance.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-       
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new login().setVisible(true);
+                new ViewBalance().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonLogin;
+    private javax.swing.JButton jButton1;
     private javax.swing.JFrame jFrame1;
-    private javax.swing.JLabel jLabelUserId;
-    private javax.swing.JLabel jLabelpassword;
-    private javax.swing.JPasswordField password;
-    private javax.swing.JTextField username;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

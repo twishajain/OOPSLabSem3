@@ -27,31 +27,71 @@ public class acctbalance extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jFrame1 = new javax.swing.JFrame();
+        jButtonBalance = new javax.swing.JButton();
+        jButtonDeposit = new javax.swing.JButton();
+        jButtonWithdraw = new javax.swing.JButton();
+        jButtonTransfer = new javax.swing.JButton();
+        jButtonSignOut = new javax.swing.JButton();
+
+        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(400, 400));
+        setMinimumSize(new java.awt.Dimension(400, 400));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Acct balance");
+        jButtonBalance.setText("View Acct Balance");
+        jButtonBalance.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBalanceActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonBalance, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 15, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(162, 162, 162)
-                .addComponent(jLabel1)
-                .addContainerGap(169, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(jLabel1)
-                .addContainerGap(204, Short.MAX_VALUE))
-        );
+        jButtonDeposit.setText("Deposit");
+        jButtonDeposit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDepositActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonDeposit, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 55, -1, -1));
+
+        jButtonWithdraw.setText("Withdraw");
+        getContentPane().add(jButtonWithdraw, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 101, -1, -1));
+
+        jButtonTransfer.setText("Transfer");
+        getContentPane().add(jButtonTransfer, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 147, -1, -1));
+
+        jButtonSignOut.setText("Sign Out");
+        getContentPane().add(jButtonSignOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 193, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonBalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBalanceActionPerformed
+        // TODO add your handling code here:
+        jFrame1.dispose();
+        ViewBalance v=new ViewBalance();
+        v.setVisible(true);
+        
+    }//GEN-LAST:event_jButtonBalanceActionPerformed
+
+    private void jButtonDepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDepositActionPerformed
+        // TODO add your handling code here:
+        jFrame1.dispose();
+        deposit d=new deposit();
+        d.setVisible(true);
+    }//GEN-LAST:event_jButtonDepositActionPerformed
 
     /**
      * @param args the command line arguments
@@ -89,6 +129,11 @@ public class acctbalance extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButtonBalance;
+    private javax.swing.JButton jButtonDeposit;
+    private javax.swing.JButton jButtonSignOut;
+    private javax.swing.JButton jButtonTransfer;
+    private javax.swing.JButton jButtonWithdraw;
+    private javax.swing.JFrame jFrame1;
     // End of variables declaration//GEN-END:variables
 }
