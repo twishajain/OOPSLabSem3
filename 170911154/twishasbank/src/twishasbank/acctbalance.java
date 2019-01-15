@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package twishasbank;
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author student
@@ -46,7 +46,6 @@ public class acctbalance extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(400, 400));
         setMinimumSize(new java.awt.Dimension(400, 400));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -67,12 +66,27 @@ public class acctbalance extends javax.swing.JFrame {
         getContentPane().add(jButtonDeposit, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 55, -1, -1));
 
         jButtonWithdraw.setText("Withdraw");
+        jButtonWithdraw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonWithdrawActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonWithdraw, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 101, -1, -1));
 
         jButtonTransfer.setText("Transfer");
+        jButtonTransfer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTransferActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonTransfer, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 147, -1, -1));
 
         jButtonSignOut.setText("Sign Out");
+        jButtonSignOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSignOutActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonSignOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 193, -1, -1));
 
         pack();
@@ -92,6 +106,29 @@ public class acctbalance extends javax.swing.JFrame {
         deposit d=new deposit();
         d.setVisible(true);
     }//GEN-LAST:event_jButtonDepositActionPerformed
+
+    private void jButtonSignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSignOutActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(jFrame1,"You have successfully logged out.");
+            this.dispose();
+            this.setVisible(false);
+            System.exit(0);
+    }//GEN-LAST:event_jButtonSignOutActionPerformed
+
+    private void jButtonWithdrawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonWithdrawActionPerformed
+        // TODO add your handling code here:
+        jFrame1.dispose();
+        withdrawl w=new withdrawl();
+        w.setVisible(true);
+    }//GEN-LAST:event_jButtonWithdrawActionPerformed
+
+    private void jButtonTransferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTransferActionPerformed
+        // TODO add your handling code here:
+        Transfers t=new Transfers();
+        this.setVisible(false);
+        this.dispose();
+        t.setVisible(true);
+    }//GEN-LAST:event_jButtonTransferActionPerformed
 
     /**
      * @param args the command line arguments

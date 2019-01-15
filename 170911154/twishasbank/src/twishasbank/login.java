@@ -19,6 +19,7 @@ public class login extends javax.swing.JFrame {
     public static long bal;
     public login() {
         bal=10000;
+        
         initComponents();
     }
 
@@ -37,6 +38,9 @@ public class login extends javax.swing.JFrame {
         username = new javax.swing.JTextField();
         jButtonLogin = new javax.swing.JButton();
         password = new javax.swing.JPasswordField();
+        jButton1 = new javax.swing.JButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -73,8 +77,22 @@ public class login extends javax.swing.JFrame {
                 jButtonLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, -1, -1));
+        getContentPane().add(jButtonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 120, -1));
         getContentPane().add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 100, -1));
+
+        jButton1.setText("Sign Up");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 120, -1));
+
+        jRadioButton1.setText("Customer");
+        getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+
+        jRadioButton2.setText("Admin");
+        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -87,16 +105,32 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
         String user=username.getText();
         String pass=password.getText();
-        if (user.equals("name") && pass.equals("password"))
+        if (user.equals("name") && pass.equals("password") && jRadioButton1.isSelected())
         {
             JOptionPane.showMessageDialog(jFrame1,"You are successfully logined.");
             jFrame1.dispose();
             acctbalance a=new acctbalance();
             a.setVisible(true);
+            this.setVisible(false);
+        }
+        else if (user.equals("admin") && pass.equals("admin") && jRadioButton2.isSelected())
+                {
+            JOptionPane.showMessageDialog(jFrame1,"Welcome admin.");
+            jFrame1.dispose();
+            adminpg ac=new adminpg();
+            ac.setVisible(true);
+            this.setVisible(false);
         }
         else
             JOptionPane.showMessageDialog(jFrame1, "Invalid username or password");
     }//GEN-LAST:event_jButtonLoginActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        SignUpPg p=new SignUpPg();
+        this.setVisible(false);
+        p.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,10 +168,13 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonLogin;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabelUserId;
     private javax.swing.JLabel jLabelpassword;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JPasswordField password;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables

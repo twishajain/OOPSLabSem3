@@ -69,6 +69,7 @@ public class deposit extends javax.swing.JFrame {
         jFrame1.dispose();
         acctbalance a=new acctbalance();
         a.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
